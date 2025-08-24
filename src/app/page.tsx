@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ProjectCard } from "@/components/ProjectCard";
+import { GitHubCard } from "@/components/GitHubCard";
 import Link from "next/link";
 
 export default function Home() {
@@ -106,13 +108,15 @@ export default function Home() {
                     View My Work
                   </Button>
                 </Link>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
-                >
-                  Get In Touch
-                </Button>
+                <Link href="#footer">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
+                  >
+                    Get In Touch
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -156,291 +160,205 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Card 1 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  AI Website Builder
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  Create a website with AI in minutes, with live preview,
-                  3-layer security, and pay-as-you-go pricing
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    Next.js
-                  </span>
-                  <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                    Inngest Agentkit
-                  </span>
-                  <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                    Prisma ORM
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://github.com/giaphutran12/vibe-saas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/vibe.png"
+              title="AI Website Builder"
+              description="Create a website with AI in minutes, with live preview, 3-layer security, and pay-as-you-go pricing"
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "Inngest Agentkit",
+                  color: "bg-green-600/20 text-green-300 border-green-500/30",
+                },
+                {
+                  name: "Prisma ORM",
+                  color:
+                    "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
+                },
+              ]}
+              projectUrl="https://github.com/giaphutran12/vibe-saas"
+            />
 
-            {/* Project Card 2 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  Serverless Image Style Transformer
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  Transform images using client-side webGPU, with a serverless
-                  setup using WebAssembly and Rust
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    Next.js
-                  </span>
-                  <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
-                    Rust
-                  </span>
-                  <span className="px-3 py-1 bg-cyan-600/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
-                    WebAssembly
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://image-style-transformer-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/serverless-image-style-transformer.png"
+              title="Serverless Image Style Transformer"
+              description="Transform images using client-side webGPU, with a serverless setup using WebAssembly and Rust"
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "Rust",
+                  color:
+                    "bg-purple-600/20 text-purple-300 border-purple-500/30",
+                },
+                {
+                  name: "WebAssembly",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+              ]}
+              projectUrl="https://image-style-transformer-demo.com"
+            />
 
-            {/* Project Card 3 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  Intelligent LLM Router
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  Save money, time, and resources by routing your requests to
-                  the best LLM for the job
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    Next.js
-                  </span>
-                  <span className="px-3 py-1 bg-orange-600/20 text-orange-300 text-sm rounded-full border border-orange-500/30">
-                    OpenRouter
-                  </span>
-                  <span className="px-3 py-1 bg-indigo-600/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
-                    OpenAI API
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://llm-router-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/llm-router.png"
+              title="Intelligent LLM Router"
+              description="Save money, time, and resources by routing your requests to the best LLM for the job"
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "OpenRouter",
+                  color:
+                    "bg-orange-600/20 text-orange-300 border-orange-500/30",
+                },
+                {
+                  name: "OpenAI API",
+                  color:
+                    "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
+                },
+              ]}
+              projectUrl="https://llm-router-demo.com"
+            />
 
-            {/* Project Card 4 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  AI Customer Support Agent
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  Talk to AI about your questions and have it answer them, used
-                  webscraping, RAG, embedding API, vector database to generate
-                  the best answer
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    RAG
-                  </span>
-                  <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
-                    Embedding API
-                  </span>
-                  <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                    Vector Database
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://github.com/giaphutran12/ai-customer-support-agent-aven"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/customer-support-aven.png"
+              title="AI Customer Support Agent"
+              description="Talk to AI about your questions and have it answer them, used webscraping, RAG, embedding API, vector database to generate the best answer"
+              technologies={[
+                {
+                  name: "RAG",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "Embedding API",
+                  color:
+                    "bg-purple-600/20 text-purple-300 border-purple-500/30",
+                },
+                {
+                  name: "Vector Database",
+                  color: "bg-green-600/20 text-green-300 border-green-500/30",
+                },
+              ]}
+              projectUrl="https://github.com/giaphutran12/ai-customer-support-agent-aven"
+            />
 
-            {/* Project Card 5 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  VR Bus Simulator
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  You basically drive a bus in VR with some sick music and a
-                  nostalgic GTA Vice City map
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    Three.js
-                  </span>
-                  <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                    Cannon.js
-                  </span>
-                  <span className="px-3 py-1 bg-red-600/20 text-red-300 text-sm rounded-full border border-red-500/30">
-                    VR
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://vr-bus-simulator-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-            {/* Project Card 6 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  Workday management web app
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  A web app that helps 100+ IT staffs at Douglas College save
-                  75% times spent delegating organizational tasks
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    PHP
-                  </span>
-                  <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                    MySQL
-                  </span>
-                  <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                    JavaScript
-                  </span>
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    HTML
-                  </span>
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    CSS
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://ai-customer-support-platform-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/vr-bus.png"
+              title="VR Bus Simulator"
+              description="You basically drive a bus in VR with some sick music and a nostalgic GTA Vice City map"
+              technologies={[
+                {
+                  name: "Three.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "Cannon.js",
+                  color:
+                    "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
+                },
+                {
+                  name: "VR",
+                  color: "bg-red-600/20 text-red-300 border-red-500/30",
+                },
+              ]}
+              projectUrl="https://vr-bus-simulator-demo.com"
+            />
+            <ProjectCard
+              imageUrl="/whiteboard.png"
+              title="Workday management web app"
+              description="A web app that helps 100+ IT staffs at Douglas College save 75% times spent delegating organizational tasks"
+              technologies={[
+                {
+                  name: "PHP",
+                  color:
+                    "bg-emerald-600/20 text-emerald-300 border-emerald-500/30",
+                },
+                {
+                  name: "MySQL",
+                  color: "bg-amber-600/20 text-amber-300 border-amber-500/30",
+                },
+                {
+                  name: "JavaScript",
+                  color:
+                    "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
+                },
+                {
+                  name: "HTML",
+                  color:
+                    "bg-orange-600/20 text-orange-300 border-orange-500/30",
+                },
+                {
+                  name: "CSS",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+              ]}
+              projectUrl="https://ai-customer-support-platform-demo.com"
+            />
 
-            {/* Project Card 7 */}
-            <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-xl">
-                  AI Customer Support Platform
-                </CardTitle>
-                <CardDescription className="text-blue-200">
-                  Enterprise-level, multi-tenant AI customer support platform,
-                  businesses can white-label their own agent with their own docs
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                    Next.js
-                  </span>
-                  <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                    Monorepo
-                  </span>
-                  <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                    Convex
-                  </span>
-                </div>
-                <div className="mt-auto">
-                  <Link
-                    href="https://ai-customer-support-platform-demo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-                    >
-                      View Project
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <ProjectCard
+              imageUrl="/echo.png"
+              title="AI Customer Support Platform"
+              description="Enterprise-level, multi-tenant AI customer support platform, businesses can white-label their own agent with their own docs"
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "Monorepo",
+                  color: "bg-green-600/20 text-green-300 border-green-500/30",
+                },
+                {
+                  name: "Convex",
+                  color:
+                    "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
+                },
+              ]}
+              projectUrl="https://ai-customer-support-platform-demo.com"
+            />
+
+            <GitHubCard
+              imageUrl="/github.png"
+              title="There's a lot more on my GitHub"
+              description="I keep listing the projects, but it never ends. So, you can go onto my GitHub to find out more interesting stuff."
+              skills={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "C++",
+                  color: "bg-green-600/20 text-green-300 border-green-500/30",
+                },
+                {
+                  name: "Front-end Development",
+                  color:
+                    "bg-purple-600/20 text-purple-300 border-purple-500/30",
+                },
+                {
+                  name: "Back-end Development",
+                  color:
+                    "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
+                },
+                {
+                  name: "Full-stack Development",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+                {
+                  name: "Deployment",
+                  color:
+                    "bg-orange-600/20 text-orange-300 border-orange-500/30",
+                },
+              ]}
+              githubUrl="https://github.com/giaphutran12"
+            />
           </div>
         </div>
       </section>
@@ -492,50 +410,56 @@ export default function Home() {
                       <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
                         Next.js
                       </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
+                      <span className="px-3 py-1 bg-indigo-600/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
                         TypeScript
                       </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
+                      <span className="px-3 py-1 bg-cyan-600/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
                         Inngest
                       </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
+                      <span className="px-3 py-1 bg-emerald-600/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30">
                         Prisma
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-violet-600/20 text-violet-300 text-sm rounded-full border border-violet-500/30">
                         Vercel
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-slate-600/20 text-slate-300 text-sm rounded-full border border-slate-500/30">
                         Git
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-rose-600/20 text-rose-300 text-sm rounded-full border border-rose-500/30">
                         TRPC
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-teal-600/20 text-teal-300 text-sm rounded-full border border-teal-500/30">
                         Tailwind CSS
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-amber-600/20 text-amber-300 text-sm rounded-full border border-amber-500/30">
                         Shadcn UI
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-fuchsia-600/20 text-fuchsia-300 text-sm rounded-full border border-fuchsia-500/30">
                         Inngest Agentkit
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-orange-600/20 text-orange-300 text-sm rounded-full border border-orange-500/30">
                         TanStack Query
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-lime-600/20 text-lime-300 text-sm rounded-full border border-lime-500/30">
                         OAuth
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-sky-600/20 text-sky-300 text-sm rounded-full border border-sky-500/30">
                         PostgreSQL
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-pink-600/20 text-pink-300 text-sm rounded-full border border-pink-500/30">
                         Code Sanboxing
                       </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      <span className="px-3 py-1 bg-red-600/20 text-red-300 text-sm rounded-full border border-red-500/30">
                         Scripting
                       </span>
                       <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
                         Docker
+                      </span>
+                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
+                        Cursor
+                      </span>
+                      <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
+                        Convex
                       </span>
                     </div>
                   </div>
@@ -579,17 +503,20 @@ export default function Home() {
                       secured log in
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
+                      <span className="px-3 py-1 bg-indigo-600/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
                         JavaScript
                       </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
+                      <span className="px-3 py-1 bg-emerald-600/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30">
                         PHP
                       </span>
-                      <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
+                      <span className="px-3 py-1 bg-amber-600/20 text-amber-300 text-sm rounded-full border border-amber-500/30">
                         MySQL
                       </span>
-                      <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
+                      <span className="px-3 py-1 bg-cyan-600/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
                         CSS
+                      </span>
+                      <span className="px-3 py-1 bg-orange-600/20 text-orange-300 text-sm rounded-full border border-orange-500/30">
+                        HTML
                       </span>
                     </div>
                   </div>
@@ -651,76 +578,95 @@ export default function Home() {
             experience, and qualifications
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 text-lg"
+            <Link
+              href="/Resume Headstarter Edward (7).pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download Resume (PDF)
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
-            >
-              View Online
-            </Button>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 text-lg"
+              >
+                Download Resume (PDF)
+              </Button>
+            </Link>
+            <Link href="https://docs.google.com/document/d/1KJhEFd7_dtewONgrxbz6NdAwMOtl0Ye_kAkTxO3RcTE/edit?tab=t.0">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
+              >
+                View Online
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-700">
+      <footer
+        id="footer"
+        className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-700"
+      >
         <div className="absolute inset-0 bg-slate-900/80" />
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Brand Section */}
             <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E</span>
+              <div className="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">E</span>
                 </div>
-                <span className="text-white font-bold text-2xl">Edward</span>
+                <span className="text-white font-bold text-xl">Edward</span>
               </div>
-              <p className="text-blue-300 text-sm">
-                Full Stack Software Engineer passionate about building amazing
-                digital experiences
+              <p className="text-blue-300 text-xs">
+                Full Stack Software Engineer, AI oriented
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="text-center">
-              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-              <div className="space-y-2">
+              <h3 className="text-white font-semibold mb-2">Quick Links</h3>
+              <div className="space-y-1">
                 <Link
                   href="/"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Home
                 </Link>
                 <Link
                   href="#projects"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Projects
                 </Link>
                 <Link
                   href="#experience"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Experience
                 </Link>
               </div>
             </div>
 
+            {/* Contact Me */}
+            <div className="text-center">
+              <h3 className="text-white font-semibold mb-2">Contact Me</h3>
+              <div className="space-y-1">
+                <p className="text-blue-300 text-xs">giaphutran012@gmail.com</p>
+                <p className="text-blue-300 text-xs">(778) 956-6158</p>
+              </div>
+            </div>
+
             {/* Social Links */}
             <div className="text-center md:text-right">
-              <h3 className="text-white font-semibold mb-4">Connect</h3>
-              <div className="space-y-2">
+              <h3 className="text-white font-semibold mb-2">Connect</h3>
+              <div className="space-y-1">
                 <Link
                   href="https://linkedin.com/in/your-profile"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   LinkedIn
                 </Link>
@@ -728,7 +674,7 @@ export default function Home() {
                   href="https://github.com/giaphutran12"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   GitHub
                 </Link>
@@ -736,7 +682,7 @@ export default function Home() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-blue-300 hover:text-white transition-colors duration-200"
+                  className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Resume
                 </Link>
