@@ -26,6 +26,9 @@ export function ProjectCard({
   projectUrl,
   imageUrl,
 }: ProjectCardProps) {
+  const isGitHub = projectUrl.includes("github.com");
+  const buttonText = isGitHub ? "Explore My GitHub" : "View Project";
+
   return (
     <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
       {/* Project Image */}
@@ -84,7 +87,7 @@ export function ProjectCard({
               variant="outline"
               className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
             >
-              View Project
+              {buttonText}
             </Button>
           </Link>
         </div>
