@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { ProjectCard } from "@/components/ProjectCard";
 import { GitHubCard } from "@/components/GitHubCard";
+import { ExperienceCard } from "@/components/ExperienceCard";
 import Link from "next/link";
 
 export default function Home() {
@@ -381,184 +382,150 @@ export default function Home() {
           </div>
 
           <div className="space-y-8">
-            {/* Experience Item 1 */}
-            <Card className="bg-slate-800/60 border-slate-700 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Software Engineer Resident
-                    </h3>
-                    <p className="text-blue-300 text-lg mb-2">Headstarter</p>
-                    <p className="text-blue-100 mb-4">
-                      • Built 3+ AI engineering and fullstack projects in a
-                      fast-paced software team environment
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Developed 3+ apps in TypeScript and NextJS on Vercel
-                      with production and dev environment
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Coached by Google Machine Learning, Google Kubernetes,
-                      Two Sigma, Tesla, Figma and Citadel Engineers
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Created 120+ commits on github with 7-day deadlines
-                      getting a Career Capital increase of 40% from start date
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                        Next.js
-                      </span>
-                      <span className="px-3 py-1 bg-indigo-600/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
-                        TypeScript
-                      </span>
-                      <span className="px-3 py-1 bg-cyan-600/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
-                        Inngest
-                      </span>
-                      <span className="px-3 py-1 bg-emerald-600/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30">
-                        Prisma
-                      </span>
-                      <span className="px-3 py-1 bg-violet-600/20 text-violet-300 text-sm rounded-full border border-violet-500/30">
-                        Vercel
-                      </span>
-                      <span className="px-3 py-1 bg-slate-600/20 text-slate-300 text-sm rounded-full border border-slate-500/30">
-                        Git
-                      </span>
-                      <span className="px-3 py-1 bg-rose-600/20 text-rose-300 text-sm rounded-full border border-rose-500/30">
-                        TRPC
-                      </span>
-                      <span className="px-3 py-1 bg-teal-600/20 text-teal-300 text-sm rounded-full border border-teal-500/30">
-                        Tailwind CSS
-                      </span>
-                      <span className="px-3 py-1 bg-amber-600/20 text-amber-300 text-sm rounded-full border border-amber-500/30">
-                        Shadcn UI
-                      </span>
-                      <span className="px-3 py-1 bg-fuchsia-600/20 text-fuchsia-300 text-sm rounded-full border border-fuchsia-500/30">
-                        Inngest Agentkit
-                      </span>
-                      <span className="px-3 py-1 bg-orange-600/20 text-orange-300 text-sm rounded-full border border-orange-500/30">
-                        TanStack Query
-                      </span>
-                      <span className="px-3 py-1 bg-lime-600/20 text-lime-300 text-sm rounded-full border border-lime-500/30">
-                        OAuth
-                      </span>
-                      <span className="px-3 py-1 bg-sky-600/20 text-sky-300 text-sm rounded-full border border-sky-500/30">
-                        PostgreSQL
-                      </span>
-                      <span className="px-3 py-1 bg-pink-600/20 text-pink-300 text-sm rounded-full border border-pink-500/30">
-                        Code Sanboxing
-                      </span>
-                      <span className="px-3 py-1 bg-red-600/20 text-red-300 text-sm rounded-full border border-red-500/30">
-                        Scripting
-                      </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
-                        Docker
-                      </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                        Cursor
-                      </span>
-                      <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                        Convex
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-4 lg:mt-0 lg:ml-8">
-                    <p className="text-blue-300 text-lg">2025 July - Present</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Experience Item 2 */}
-            <Card className="bg-slate-800/60 border-slate-700 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Software Engineer Intern
-                    </h3>
-                    <p className="text-blue-300 text-lg mb-2">
-                      Douglas College
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Built and maintained White Board ITS, a work day
-                      management web app used by 100+ IT staffs in Douglas
-                      College
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Deployed to production 10+ new features, reducing time
-                      spent in delegating organization tasks by 75% for 100+
-                      daily users
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Provided real-time information/announcement to 100+
-                      staff in Douglas College’s IT department, reducing time
-                      spent recommunicating and figuring out what to do for the
-                      day by 35%
-                    </p>
-                    <p className="text-blue-100 mb-4">
-                      • Leveraged PHP and AJAX calls to MySQL to provide
-                      accurate and secure user’s CRUD, implemented IP-based
-                      secured log in
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-indigo-600/20 text-indigo-300 text-sm rounded-full border border-indigo-500/30">
-                        JavaScript
-                      </span>
-                      <span className="px-3 py-1 bg-emerald-600/20 text-emerald-300 text-sm rounded-full border border-emerald-500/30">
-                        PHP
-                      </span>
-                      <span className="px-3 py-1 bg-amber-600/20 text-amber-300 text-sm rounded-full border border-amber-500/30">
-                        MySQL
-                      </span>
-                      <span className="px-3 py-1 bg-cyan-600/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
-                        CSS
-                      </span>
-                      <span className="px-3 py-1 bg-orange-600/20 text-orange-300 text-sm rounded-full border border-orange-500/30">
-                        HTML
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-4 lg:mt-0 lg:ml-8">
-                    <p className="text-blue-300 text-lg">Apr 2024 - Dec 2024</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Experience Item 3 */}
-            <Card className="bg-slate-800/60 border-slate-700 backdrop-blur-sm hidden">
-              <CardContent className="p-6">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Junior Developer
-                    </h3>
-                    <p className="text-blue-300 text-lg mb-2">StartupHub</p>
-                    <p className="text-blue-100 mb-4">
-                      Built responsive web applications, learned modern
-                      development practices, and contributed to team code
-                      reviews.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-600/20 text-blue-300 text-sm rounded-full border border-blue-500/30">
-                        JavaScript
-                      </span>
-                      <span className="px-3 py-1 bg-green-600/20 text-green-300 text-sm rounded-full border border-green-500/30">
-                        Express
-                      </span>
-                      <span className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full border border-yellow-500/30">
-                        MongoDB
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-4 lg:mt-0 lg:ml-8">
-                    <p className="text-blue-300 text-lg">2018 - 2020</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <ExperienceCard
+              title="Software Engineer Resident"
+              company="Headstarter"
+              period="2025 July - Present"
+              description={[
+                "• Built 3+ AI engineering and fullstack projects in a fast-paced software team environment",
+                "• Developed 3+ apps in TypeScript and NextJS on Vercel with production and dev environment",
+                "• Coached by Google Machine Learning, Google Kubernetes, Two Sigma, Tesla, Figma and Citadel Engineers",
+                "• Created 120+ commits on github with 7-day deadlines getting a Career Capital increase of 40% from start date",
+              ]}
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "TypeScript",
+                  color:
+                    "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
+                },
+                {
+                  name: "Inngest",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+                {
+                  name: "Prisma",
+                  color:
+                    "bg-emerald-600/20 text-emerald-300 border-emerald-500/30",
+                },
+                {
+                  name: "Vercel",
+                  color:
+                    "bg-violet-600/20 text-violet-300 border-violet-500/30",
+                },
+                {
+                  name: "Git",
+                  color: "bg-slate-600/20 text-slate-300 border-slate-500/30",
+                },
+                {
+                  name: "TRPC",
+                  color: "bg-rose-600/20 text-rose-300 border-rose-500/30",
+                },
+                {
+                  name: "Tailwind CSS",
+                  color: "bg-teal-600/20 text-teal-300 border-teal-500/30",
+                },
+                {
+                  name: "Shadcn UI",
+                  color: "bg-amber-600/20 text-amber-300 border-amber-500/30",
+                },
+                {
+                  name: "Inngest Agentkit",
+                  color:
+                    "bg-fuchsia-600/20 text-fuchsia-300 border-fuchsia-500/30",
+                },
+                {
+                  name: "TanStack Query",
+                  color:
+                    "bg-orange-600/20 text-orange-300 border-orange-500/30",
+                },
+                {
+                  name: "OAuth",
+                  color: "bg-lime-600/20 text-lime-300 border-lime-500/30",
+                },
+                {
+                  name: "PostgreSQL",
+                  color: "bg-sky-600/20 text-sky-300 border-sky-500/30",
+                },
+                {
+                  name: "Code Sanboxing",
+                  color: "bg-pink-600/20 text-pink-300 border-pink-500/30",
+                },
+                {
+                  name: "Scripting",
+                  color: "bg-red-600/20 text-red-300 border-red-500/30",
+                },
+                {
+                  name: "Docker",
+                  color:
+                    "bg-purple-600/20 text-purple-300 border-purple-500/30",
+                },
+                {
+                  name: "Cursor",
+                  color: "bg-green-600/20 text-green-300 border-green-500/30",
+                },
+                {
+                  name: "Convex",
+                  color:
+                    "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
+                },
+              ]}
+              logoUrl="/headstarter.png"
+              logoAlt="Headstarter Logo"
+            />
+            <ExperienceCard
+              title="Software Engineer Intern"
+              company="Douglas College"
+              period="2024 April - 2024 December"
+              description={[
+                "• Built and maintained White Board ITS, a work day management web app used by 100+ IT staffs in Douglas College",
+                "• Deployed to production 10+ new features, reducing time spent in delegating organization tasks by 75% for 100+ daily users",
+                "• Provided real-time information/announcement to 100+ staff in Douglas College's IT department, reducing time spent recommunicating and figuring out what to do for the day by 35%",
+                "• Leveraged PHP and AJAX calls to MySQL to provide accurate and secure user's CRUD, implemented IP-based secured log in",
+              ]}
+              technologies={[
+                {
+                  name: "JavaScript",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "PHP",
+                  color:
+                    "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
+                },
+                {
+                  name: "MySQL",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+                {
+                  name: "CSS",
+                  color:
+                    "bg-emerald-600/20 text-emerald-300 border-emerald-500/30",
+                },
+                {
+                  name: "HTML",
+                  color:
+                    "bg-violet-600/20 text-violet-300 border-violet-500/30",
+                },
+                {
+                  name: "AJAX",
+                  color: "bg-slate-600/20 text-slate-300 border-slate-500/30",
+                },
+                {
+                  name: "IP-based secured log in",
+                  color: "bg-rose-600/20 text-rose-300 border-rose-500/30",
+                },
+                {
+                  name: "CRUD",
+                  color: "bg-teal-600/20 text-teal-300 border-teal-500/30",
+                },
+              ]}
+              logoUrl="/douglas-college.png"
+              logoAlt="Douglas College Logo"
+            />
           </div>
         </div>
       </section>
@@ -617,7 +584,9 @@ export default function Home() {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">E</span>
                 </div>
-                <span className="text-white font-bold text-xl">Edward</span>
+                <span className="text-white font-bold text-xl">
+                  Edward Tran
+                </span>
               </div>
               <p className="text-blue-300 text-xs">
                 Full Stack Software Engineer, AI oriented
