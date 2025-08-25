@@ -45,8 +45,8 @@ export function ProjectsSection() {
             </span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Wassup I code sometimes. But when I do, it's cool-stuff-only zone.{" "}
-            <br /> Fullstack AI web app is my favorite tbh.
+            Wassup I code sometimes. But when I do, it&apos;s cool-stuff-only
+            zone. <br /> Fullstack AI web app is my favorite tbh.
           </p>
         </motion.div>
 
