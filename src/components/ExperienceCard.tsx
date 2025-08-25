@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 interface ExperienceCardProps {
   title: string;
@@ -50,9 +51,11 @@ export function ExperienceCard({
           <div className="mt-4 lg:mt-0 lg:ml-8 flex flex-col items-center lg:items-end">
             {logoUrl ? (
               <div className="w-20 h-20 mb-3 bg-white rounded-lg p-2 flex items-center justify-center shadow-lg">
-                <img
+                <Image
                   src={logoUrl}
                   alt={logoAlt || `${company} logo`}
+                  width={80}
+                  height={80}
                   className="w-full h-full object-contain"
                 />
               </div>

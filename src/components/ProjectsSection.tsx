@@ -45,8 +45,8 @@ export function ProjectsSection() {
             </span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Here are some of the projects I've built, showcasing my skills in
-            full-stack development
+            Here are some of the projects I&apos;ve built, showcasing my skills
+            in full-stack development
           </p>
         </motion.div>
 

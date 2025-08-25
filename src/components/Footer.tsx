@@ -2,8 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { smoothScrollTo } from "@/lib/utils";
 
 export function Footer() {
+  const handleSmoothScroll = (elementId: string) => {
+    smoothScrollTo(elementId);
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,24 +66,24 @@ export function Footer() {
           <motion.div className="text-center" variants={itemVariants}>
             <h3 className="text-white font-semibold mb-2">Quick Links</h3>
             <div className="space-y-1">
-              <Link
-                href="/"
-                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
+              <button
+                onClick={() => handleSmoothScroll("")}
+                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm cursor-pointer w-full text-center"
               >
                 Home
-              </Link>
-              <Link
-                href="#projects"
-                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
+              </button>
+              <button
+                onClick={() => handleSmoothScroll("projects")}
+                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm cursor-pointer w-full text-center"
               >
                 Projects
-              </Link>
-              <Link
-                href="#experience"
-                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
+              </button>
+              <button
+                onClick={() => handleSmoothScroll("experience")}
+                className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm cursor-pointer w-full text-center"
               >
                 Experience
-              </Link>
+              </button>
             </div>
           </motion.div>
 
@@ -99,7 +104,7 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-2">Connect</h3>
             <div className="space-y-1">
               <Link
-                href="https://linkedin.com/in/your-profile"
+                href="https://linkedin.com/in/edwardtran123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"
@@ -115,7 +120,7 @@ export function Footer() {
                 GitHub
               </Link>
               <Link
-                href="/resume.pdf"
+                href="https://docs.google.com/document/d/1KJhEFd7_dtewONgrxbz6NdAwMOtl0Ye_kAkTxO3RcTE/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-blue-300 hover:text-white transition-colors duration-200 text-sm"

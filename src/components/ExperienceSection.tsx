@@ -45,8 +45,8 @@ export function ExperienceSection() {
             </span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            My journey in software development and the companies I've had the
-            privilege to work with
+            My journey in software development and the companies I&apos;ve had
+            the privilege to work with
           </p>
         </motion.div>
 

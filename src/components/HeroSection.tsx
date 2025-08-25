@@ -3,8 +3,14 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { smoothScrollTo } from "@/lib/utils";
 
 export function HeroSection() {
+  const handleSmoothScroll = (elementId: string) => {
+    smoothScrollTo(elementId);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-purple-600/20" />
@@ -23,7 +29,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              Hey, I'm{" "}
+              Hey, I&apos;m{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Edward
               </span>
@@ -34,11 +40,14 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              I'm a{" "}
+              I&apos;m a{" "}
               <span className="text-cyan-300 font-semibold">
                 Full Stack Software Engineer
               </span>{" "}
-              passionate about building amazing digital experiences
+              specialized in{" "}
+              <span className="text-cyan-300 font-semibold">
+                AI Engineering
+              </span>
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
@@ -46,23 +55,21 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              <Link href="#projects">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 text-lg"
-                >
-                  View My Work
-                </Button>
-              </Link>
-              <Link href="#footer">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
-                >
-                  Get In Touch
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                onClick={() => handleSmoothScroll("projects")}
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 text-lg"
+              >
+                View My Work
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => handleSmoothScroll("footer")}
+                className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 text-lg"
+              >
+                Get In Touch
+              </Button>
             </motion.div>
           </motion.div>
 
@@ -80,31 +87,54 @@ export function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
+                <Image
                   src="/Edward-photo-2.jpg"
                   alt="Edward - Full Stack Software Engineer"
+                  width={384}
+                  height={384}
                   className="w-full h-full object-cover object-center scale-100"
                 />
               </motion.div>
 
               {/* Floating Elements for Visual Interest */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                animate={{
+                  rotate: 360,
+                  x: [0, 20, 0],
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  rotate: { duration: 8, repeat: Infinity, ease: "linear" },
+                  x: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"
+                animate={{
+                  rotate: -360,
+                  x: [0, -15, 0],
+                  y: [0, 15, 0],
+                }}
+                transition={{
+                  rotate: { duration: 10, repeat: Infinity, ease: "linear" },
+                  x: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                }}
               />
               <motion.div
-                className="absolute top-1/2 -right-8 w-4 h-4 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-pulse"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                className="absolute top-1/2 -right-8 w-4 h-4 bg-gradient-to-r from-green-400 to-teal-500 rounded-full"
+                animate={{
+                  rotate: 360,
+                  x: [0, 12, 0],
+                  y: [0, 8, 0],
+                }}
+                transition={{
+                  rotate: { duration: 12, repeat: Infinity, ease: "linear" },
+                  x: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                }}
               />
             </div>
           </motion.div>

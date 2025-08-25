@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -34,9 +35,11 @@ export function ProjectCard({
       {/* Project Image */}
       <div className="w-full h-48 bg-slate-700/50 rounded-t-lg flex items-center justify-center overflow-hidden">
         {imageUrl ? (
-          <img
+          <Image
             src={imageUrl}
             alt={`${title} Screenshot`}
+            width={400}
+            height={192}
             className="w-full h-48 object-cover rounded-t-lg"
           />
         ) : (
