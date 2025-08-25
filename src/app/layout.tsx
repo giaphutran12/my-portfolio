@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Edward - Full Stack Software Engineer",
-  description:
-    "Personal portfolio of Edward, a passionate Full Stack Software Engineer specializing in modern web technologies",
+  description: "Specializing in AI Engineering and Full Stack Development",
   keywords: [
     "Full Stack Developer",
+    "AI Engineer",
     "Software Engineer",
     "React",
     "Node.js",
