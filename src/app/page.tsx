@@ -21,9 +21,8 @@ export default function Home() {
 
       <HeroSection />
 
-      <ProjectsSection />
-
       <ExperienceSection />
+      <ProjectsSection />
 
       <ResumeSection />
 

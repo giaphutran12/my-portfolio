@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { smoothScrollTo } from "@/lib/utils";
+import Image from "next/image";
 
 export function Footer() {
   const handleSmoothScroll = (elementId: string) => {
@@ -53,7 +54,12 @@ export function Footer() {
           >
             <div className="flex items-center justify-center md:justify-start space-x-2 mb-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
+                <Image
+                  src="/edward-logo.svg"
+                  alt="Edward"
+                  width={32}
+                  height={32}
+                />
               </div>
               <span className="text-white font-bold text-xl">Edward Tran</span>
             </div>
@@ -136,7 +142,7 @@ export function Footer() {
           variants={itemVariants}
         >
           <p className="text-blue-300 text-sm">
-            © 2024 Edward. Built with Next.js, Tailwind CSS, and Shadcn UI
+            © 2025 Edward Tran. Built with Next.js, Tailwind CSS, and Shadcn UI
           </p>
         </motion.div>
       </motion.div>
