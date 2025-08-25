@@ -59,7 +59,7 @@ export function ResumeSection() {
           variants={itemVariants}
         >
           <Link
-            href="/Resume Headstarter Edward (7).pdf"
+            href="/Resume Headstarter Edward (8).pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
