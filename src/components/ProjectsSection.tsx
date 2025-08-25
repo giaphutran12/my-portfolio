@@ -77,7 +77,7 @@ export function ProjectsSection() {
                     "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
                 },
               ]}
-              projectUrl="https://github.com/giaphutran12/vibe-saas"
+              projectUrl="https://vibe-psy.vercel.app/"
             />
           </motion.div>
 
@@ -101,7 +101,7 @@ export function ProjectsSection() {
                   color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
                 },
               ]}
-              projectUrl="https://image-style-transformer-demo.com"
+              projectUrl="https://webassembly-image-transfer.vercel.app/"
             />
           </motion.div>
 
@@ -126,7 +126,7 @@ export function ProjectsSection() {
                     "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
                 },
               ]}
-              projectUrl="https://llm-router-demo.com"
+              projectUrl="https://llm-router-mauve.vercel.app/"
             />
           </motion.div>
 
@@ -174,7 +174,7 @@ export function ProjectsSection() {
                   color: "bg-red-600/20 text-red-300 border-red-500/30",
                 },
               ]}
-              projectUrl="https://vr-bus-simulator-demo.com"
+              projectUrl="https://github.com/giaphutran12/VR_Bus_2"
             />
           </motion.div>
 
@@ -208,7 +208,7 @@ export function ProjectsSection() {
                   color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
                 },
               ]}
-              projectUrl="https://ai-customer-support-platform-demo.com"
+              projectUrl="https://github.com/giaphutran12/ai-customer-support-agent-aven"
             />
           </motion.div>
 
@@ -232,7 +232,7 @@ export function ProjectsSection() {
                     "bg-yellow-600/20 text-yellow-300 border-yellow-500/30",
                 },
               ]}
-              projectUrl="https://ai-customer-support-platform-demo.com"
+              projectUrl="https://github.com/giaphutran12/echo-saas-b2b-customer-support"
             />
           </motion.div>
 
@@ -252,7 +252,7 @@ export function ProjectsSection() {
                 },
                 {
                   name: "Full-stack Development",
-                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                  color: "bg-cyan-600/20 text-cyan-300 border-blue-500/30",
                 },
                 {
                   name: "Deployment",
@@ -261,6 +261,7 @@ export function ProjectsSection() {
                 },
               ]}
               projectUrl="https://github.com/giaphutran12"
+              customButtonText="Explore My GitHub"
             />
           </motion.div>
         </motion.div>

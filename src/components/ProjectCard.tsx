@@ -18,6 +18,7 @@ interface ProjectCardProps {
   }>;
   projectUrl: string;
   imageUrl?: string;
+  customButtonText?: string;
 }
 
 export function ProjectCard({
@@ -26,9 +27,12 @@ export function ProjectCard({
   technologies,
   projectUrl,
   imageUrl,
+  customButtonText,
 }: ProjectCardProps) {
   const isGitHub = projectUrl.includes("github.com");
-  const buttonText = isGitHub ? "Explore My GitHub" : "View Project";
+  const buttonText =
+    customButtonText ||
+    (isGitHub ? "Explore My GitHub Repo" : "View Project, It's Live!");
 
   return (
     <Card className="bg-slate-800/60 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm flex flex-col">
