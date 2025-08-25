@@ -87,7 +87,7 @@ export function HeroSection() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/Edward-photo-2.jpg"
+                  src="/Edward-photo-3.jpg"
                   alt="Edward - Full Stack Software Engineer"
                   width={384}
                   height={384}
