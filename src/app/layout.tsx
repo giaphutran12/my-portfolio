@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Edward" }],
   creator: "Edward",
+  icons: {
+    icon: [
+      {
+        url: "/edward-logo.svg",
+        type: "svg",
+      },
+    ],
+    shortcut: "/edward-logo.svg",
+    apple: "/edward-logo.svg",
+  },
 };
 
 export default function RootLayout({
