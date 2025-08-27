@@ -80,7 +80,7 @@ export function ExperienceSection() {
                 },
                 {
                   name: "Inngest",
-                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                  color: "bg-cyan-600/20 text-cyan-300 border-blue-500/30",
                 },
                 {
                   name: "Prisma",
@@ -151,6 +151,7 @@ export function ExperienceSection() {
               ]}
               logoUrl="/headstarter.png"
               logoAlt="Headstarter Logo"
+              companyUrl="https://headstarter.co"
             />
           </motion.div>
           <motion.div variants={itemVariants}>
@@ -203,6 +204,7 @@ export function ExperienceSection() {
               ]}
               logoUrl="/douglas-college.png"
               logoAlt="Douglas College Logo"
+              companyUrl="https://www.douglascollege.ca"
             />
           </motion.div>
         </motion.div>

@@ -12,6 +12,7 @@ interface ExperienceCardProps {
   }>;
   logoUrl?: string;
   logoAlt?: string;
+  companyUrl?: string;
 }
 
 export function ExperienceCard({
@@ -22,6 +23,7 @@ export function ExperienceCard({
   technologies,
   logoUrl,
   logoAlt,
+  companyUrl,
 }: ExperienceCardProps) {
   return (
     <Card className="bg-slate-800/60 border-slate-700 backdrop-blur-sm">
@@ -51,13 +53,31 @@ export function ExperienceCard({
           <div className="mt-4 lg:mt-0 lg:ml-8 flex flex-col items-center lg:items-end">
             {logoUrl ? (
               <div className="w-20 h-20 mb-3 bg-white rounded-lg p-2 flex items-center justify-center shadow-lg">
-                <Image
-                  src={logoUrl}
-                  alt={logoAlt || `${company} logo`}
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-contain"
-                />
+                {companyUrl ? (
+                  <a
+                    href={companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center hover:scale-105 transition-transform duration-200 cursor-pointer"
+                    title={`Visit ${company} website`}
+                  >
+                    <Image
+                      src={logoUrl}
+                      alt={logoAlt || `${company} logo`}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-contain"
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={logoUrl}
+                    alt={logoAlt || `${company} logo`}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-contain"
+                  />
+                )}
               </div>
             ) : (
               <div className="w-20 h-20 mb-3 bg-slate-600 rounded-lg flex items-center justify-center">
