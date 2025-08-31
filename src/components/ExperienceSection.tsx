@@ -59,6 +59,45 @@ export function ExperienceSection() {
         >
           <motion.div variants={itemVariants}>
             <ExperienceCard
+              title="Software Engineer"
+              company="Build Launch Iterate Ltd."
+              period="2025 August - Present"
+              description={[
+                "• Lead a team of 3+ software engineers to build an AI tool that help sales rep close 2x more deals by analyzing past calls data, summarizing important customer info, predict stage of deal, provide pre-call strategy and post-call analytics",
+              ]}
+              technologies={[
+                {
+                  name: "Next.js",
+                  color: "bg-blue-600/20 text-blue-300 border-blue-500/30",
+                },
+                {
+                  name: "TypeScript",
+                  color:
+                    "bg-indigo-600/20 text-indigo-300 border-indigo-500/30",
+                },
+                {
+                  name: "Tailwind CSS",
+                  color: "bg-cyan-600/20 text-cyan-300 border-cyan-500/30",
+                },
+                {
+                  name: "Shadcn",
+                  color:
+                    "bg-emerald-600/20 text-emerald-300 border-emerald-500/30",
+                },
+                {
+                  name: "n8n",
+                  color:
+                    "bg-violet-600/20 text-violet-300 border-violet-500/30",
+                },
+              ]}
+              logoUrl="/build-launch-iterate-logo.svg"
+              logoAlt="Build Launch Iterate Logo"
+              companyUrl="https://buildlaunchiterate.vercel.app"
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <ExperienceCard
               title="Software Engineer Resident"
               company="Headstarter"
               period="2025 July - Present"
