@@ -2,127 +2,256 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { smoothScrollTo } from "@/lib/utils";
+import { useState } from "react";
 
 export function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const handleSmoothScroll = (elementId: string) => {
     smoothScrollTo(elementId);
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                {/* <span className="text-white font-bold text-lg">E</span> */}
-                <Image
-                  src="/edward-logo.svg"
-                  alt="Edward"
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <span className="text-white font-bold text-xl">Edward Tran</span>
-            </Link>
-          </motion.div>
-
-          {/* Navigation Links */}
-          <motion.div
-            className="hidden md:flex items-center space-x-8"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          >
-            <motion.div whileHover={{ y: -2 }}>
-              <button
-                onClick={() => handleSmoothScroll("projects")}
-                className="text-blue-300 hover:text-white transition-colors duration-200 cursor-pointer"
-              >
-                Projects
-              </button>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }}>
-              <button
-                onClick={() => handleSmoothScroll("experience")}
-                className="text-blue-300 hover:text-white transition-colors duration-200 cursor-pointer"
-              >
-                Experience
-              </button>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }}>
-              <Link
-                href="https://linkedin.com/in/edwardtran123"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-300 hover:text-white transition-colors duration-200"
-              >
-                LinkedIn
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }}>
-              <Link
-                href="https://github.com/giaphutran12"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-300 hover:text-white transition-colors duration-200"
-              >
-                GitHub
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }}>
-              <Link
-                href="https://docs.google.com/document/d/1KJhEFd7_dtewONgrxbz6NdAwMOtl0Ye_kAkTxO3RcTE/edit?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-300 hover:text-white transition-colors duration-200"
-              >
-                Resume
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Mobile Menu Button */}
-          <motion.div
-            className="md:hidden"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          >
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-blue-300 hover:text-white hover:bg-slate-800"
+    <>
+      <motion.nav
+        className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="flex-shrink-0"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <Link href="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                  {/* <span className="text-white font-bold text-lg">E</span> */}
+                  <Image
+                    src="/edward-logo.svg"
+                    alt="Edward"
+                    width={32}
+                    height={32}
+                  />
+                </div>
+                <span className="text-white font-bold text-xl">
+                  Edward Tran
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Navigation Links */}
+            <motion.div
+              className="hidden md:flex items-center space-x-8"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              <motion.div whileHover={{ y: -2 }}>
+                <button
+                  onClick={() => handleSmoothScroll("projects")}
+                  className="text-blue-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  Projects
+                </button>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <button
+                  onClick={() => handleSmoothScroll("experience")}
+                  className="text-blue-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  Experience
+                </button>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link
+                  href="https://linkedin.com/in/edwardtran123"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-300 hover:text-white transition-colors duration-200"
+                >
+                  LinkedIn
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link
+                  href="https://github.com/giaphutran12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-300 hover:text-white transition-colors duration-200"
+                >
+                  GitHub
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link
+                  href="https://docs.google.com/document/d/1KJhEFd7_dtewONgrxbz6NdAwMOtl0Ye_kAkTxO3RcTE/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-300 hover:text-white transition-colors duration-200"
+                >
+                  Resume
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Mobile Menu Button */}
+            <motion.div
+              className="md:hidden flex items-center justify-center flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            >
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-blue-300 hover:text-white hover:bg-slate-800 min-w-[44px] min-h-[44px] p-2 touch-manipulation"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </Button>
-          </motion.div>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={
+                      isMobileMenuOpen
+                        ? "M6 18L18 6M6 6l12 12"
+                        : "M4 6h16M4 12h16M4 18h16"
+                    }
+                  />
+                </svg>
+              </Button>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </motion.nav>
+      </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMobileMenu}
+            />
+
+            {/* Mobile Menu */}
+            <motion.div
+              className="fixed top-16 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-b border-slate-700 z-50 md:hidden"
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <div className="px-4 py-6 space-y-4">
+                {/* Projects */}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <button
+                    onClick={() => handleSmoothScroll("projects")}
+                    className="w-full text-left text-blue-300 hover:text-white transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-slate-800 min-h-[44px] touch-manipulation"
+                  >
+                    Projects
+                  </button>
+                </motion.div>
+
+                {/* Experience */}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <button
+                    onClick={() => handleSmoothScroll("experience")}
+                    className="w-full text-left text-blue-300 hover:text-white transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-slate-800 min-h-[44px] touch-manipulation"
+                  >
+                    Experience
+                  </button>
+                </motion.div>
+
+                {/* LinkedIn */}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Link
+                    href="https://linkedin.com/in/edwardtran123"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-blue-300 hover:text-white transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-slate-800 min-h-[44px] touch-manipulation"
+                    onClick={closeMobileMenu}
+                  >
+                    LinkedIn
+                  </Link>
+                </motion.div>
+
+                {/* GitHub */}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Link
+                    href="https://github.com/giaphutran12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-blue-300 hover:text-white transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-slate-800 min-h-[44px] touch-manipulation"
+                    onClick={closeMobileMenu}
+                  >
+                    GitHub
+                  </Link>
+                </motion.div>
+
+                {/* Resume */}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link
+                    href="https://docs.google.com/document/d/1KJhEFd7_dtewONgrxbz6NdAwMOtl0Ye_kAkTxO3RcTE/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left text-blue-300 hover:text-white transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-slate-800 min-h-[44px] touch-manipulation"
+                    onClick={closeMobileMenu}
+                  >
+                    Resume
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
